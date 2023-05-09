@@ -5,14 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import ProtectedRoutes from "./ProtectedRoutes";
 import PublicRoutes from "./PublicRoutes";
 import { useNavigate } from "react-router-dom";
-import { getToken } from './../utils/localStorage';
 
 function AppRoutes() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const user = getToken();
-  console.log("Token Login: " + user);
+  // const user = getToken();
+  // console.log("Token Login: " + user);
 
   //kiểm tra login hay chưa
   // const Routes = user && user !== {} ? ProtectedRoutes : PublicRoutes;

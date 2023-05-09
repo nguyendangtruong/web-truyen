@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import authSlice from "./auth/authSlice";
+import authSlice from "./auth/authSlice";
 // import navResReducer from './navRes/navResSlice'
 // import treeSlice from "./tree/TreeSlice";
 // import userSlice from './user/UserSlice';
@@ -8,7 +8,7 @@ import { configureStore } from "@reduxjs/toolkit";
 const store = configureStore({
   reducer: {
     // navRes: navResReducer,
-    // auth: authSlice,
+    auth: authSlice,
     // user: userSlice,
     // tree: treeSlice,
     // assignment: assignmentSlice,
