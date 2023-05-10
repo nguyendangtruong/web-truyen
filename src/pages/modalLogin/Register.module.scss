@@ -1,6 +1,6 @@
 @use "../../styles/scss/" as *;
 
-#loginModal {
+#registerModal {
     width: 100%;
     height: 100%;
     display: flex;
@@ -31,7 +31,7 @@
 
         input {
             width: 100%;
-            height: 60px;
+            height: 40px;
             border-radius: 10px;
             border: 1px solid #ccc;
             padding: 0 10px;

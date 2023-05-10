@@ -9,9 +9,27 @@ import dataListTruyen from '../../constants/dataListTruyen';
 import dataTruyenNew from '../../constants/dataTruyenNew';
 import Dropdown from 'react-bootstrap/Dropdown';
 import iconDown from '../../assets/icon-feather-chevron-down.png';
+import Login from '../../pages/modalLogin/Login';
+import Register from '../../pages/modalLogin/Register';
 
 const Home = () => {
   const navigate = useNavigate();
+  const [modalLoginVisible, setModalLoginVisible] = useState(false);
+  const [modalRegisterVisible, setModalRegisterVisible] = useState(false);
+
+  const handleOpenModal = () => {
+    setModalLoginVisible(true);
+    setModalRegisterVisible(false);
+  };
+
+  const handleOpenModalResgister = () => {
+    setModalLoginVisible(false);
+    setModalRegisterVisible(true);
+  };
+  const handleCloseModal = () => {
+    setModalLoginVisible(false);
+    setModalRegisterVisible(false);
+  };
 
   return (
     <div id={styles.homePage}>
@@ -57,7 +75,7 @@ const Home = () => {
         {/* tài khoản */}
         <div className={styles.headerRight}>
           <img src={user} alt="logo" />
-          <div className={styles.buttonLogin}>
+          <div className={styles.buttonLogin} onClick={handleOpenModal}>
             <span>Đăng nhập</span>
           </div>
         </div>
@@ -102,6 +120,10 @@ const Home = () => {
           })}
         </div>
       </div>
+
+      {/* Modal Login */}
+      <Login visible={modalLoginVisible} onOK={handleOpenModal} onCancel={handleCloseModal} onOpenResgister={handleOpenModalResgister} />
+      <Register visible={modalRegisterVisible} onOK={handleOpenModal} onCancel={handleCloseModal}/>
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
-import styles from './Login.module.scss';
+import styles from './Register.module.scss';
 import { Modal } from 'antd';
 
-const Login = ({ visible, centered = true, onCancel, onOk, onOpenResgister }) => {
+const Register = ({ visible, centered = true, onCancel, onOk }) => {
   return (
     <Modal
       centered={centered}
@@ -19,25 +19,36 @@ const Login = ({ visible, centered = true, onCancel, onOk, onOpenResgister }) =>
       maskClosable={true}
       style={{ borderRadius: 50, padding: 0 }}
     >
-      <div id={styles.loginModal}>
-        <span className={styles.title}>Đăng nhập</span>
+      <div id={styles.registerModal}>
+        <span className={styles.title}>Đăng ký</span>
+
+        <div className={styles.formInput}>
+          <span>Họ tên</span>
+          <input placeholder="Nhập Họ tên" />
+        </div>
 
         <div className={styles.formInput}>
           <span>Email</span>
           <input placeholder="Nhập email" />
         </div>
 
+
         <div className={styles.formInput}>
           <span>Mật khẩu</span>
           <input placeholder="Nhập mật khẩu" />
         </div>
 
+        <div className={styles.formInput}>
+          <span>Quyền</span>
+          <input placeholder="Nhập quyền" />
+        </div>
+
         <div className={styles.footer}>
           <div className={styles.footerLeft}>
-            <span>Quên mật khẩu</span>
-            <span>Đăng ký</span>
+            {/* <span>Quên mật khẩu</span> */}
+            <span>Đăng nhập</span>
           </div>
-          <div className={styles.btndangky} onClick={onOpenResgister}>
+          <div className={styles.btndangky}>
             <span>Đăng ký</span>
           </div>
         </div>
@@ -46,4 +57,4 @@ const Login = ({ visible, centered = true, onCancel, onOk, onOpenResgister }) =>
   );
 };
 
-export default Login;
+export default Register;
